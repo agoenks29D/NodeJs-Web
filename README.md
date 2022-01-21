@@ -1,6 +1,6 @@
 # NodeJs Web - Starter
 
-<center><img src="node.svg"></center>
+<center><img src="https://seeklogo.com/images/N/nodejs-logo-D26404F360-seeklogo.com.png" width="120"></center>
 
 <center>
 	<img src="site.png">
