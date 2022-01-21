@@ -1,0 +1,62 @@
+{
+  "text": {
+    "primary-header": "Dashboard"
+  },
+  "home": "home",
+  "site": {
+    "navbar-link": {
+      "home": "Home",
+      "about": "About",
+      "contact": "Contact",
+      "sign-in": "Sign In"
+    }
+  },
+  "error": "error",
+  "sign-in": "Sign In",
+  "text-message": {
+    "header": {
+      "sign-in": "Sign in to start your session"
+    }
+  },
+  "placeholder": {
+    "email-or-username": "Email / Username",
+    "password": "Password"
+  },
+  "form-label": {
+    "remember-me": "Remember Me"
+  },
+  "button": {
+    "text": {
+      "sign-in": {
+        "default": "Sign in",
+        "with-facebook": "Sign in with facebook",
+        "with-google-plus": "Sign in with google"
+      }
+    }
+  },
+  "text-link": {
+    "forgot-password": "Forgot password",
+    "sign-up": "Sign up",
+    "home": "Home",
+    "contact": "Contact",
+    "see-all-notification": "See all notification",
+    "see-all-message": "See all message",
+    "profile": "Profile",
+    "settings": "Settings",
+    "sign-out": "Sign out"
+  },
+  "validation": {
+    "device_id": "Device ID",
+    "device_type": "Device Type",
+    "is_browser": "Is Browser",
+    "is_private": "Is Private Browser"
+  },
+  "identification": {
+    "ID": "ID",
+    "hostname": "hostname",
+    "device_id": "device_id",
+    "device_type": "device_type",
+    "is_browser": "is_browser",
+    "is_private": "is_private"
+  }
+}

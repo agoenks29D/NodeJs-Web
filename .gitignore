@@ -1,0 +1,8 @@
+# MAC OS ignore
+.DS_Store
+.AppleDouble
+.LSOverride
+
+node_modules/
+sessions/
+package-lock.json

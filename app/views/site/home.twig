@@ -1,0 +1,18 @@
+{% extends '@site/base.twig' %}
+
+{% block title %}
+	{% if title is defined %}
+			{{ title }}
+		{% else %}
+			{{ app.name }} - {{ page_attributes.name }}
+	{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="starter-template">
+		<h1>{{ app.name }}</h1>
+		<p class="lead">Hello {{ name }}!! let's start development<br> this template using Bootstrap v3</p>
+	</div>
+</div>
+{% endblock %}

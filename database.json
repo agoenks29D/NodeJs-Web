@@ -1,0 +1,16 @@
+{
+	"default": {
+		"dsn": "",
+		"host": "localhost",
+		"port": 3306,
+		"username": "root",
+		"password": "",
+		"database": "node-web",
+		"dbprefix": "",
+		"db_debug": false,
+		"dbdriver": "mysql",
+		"char_set": "utf8mb4",
+		"dbcollat": "utf8mb4_unicode_ci",
+		"timezone": "+07:00"
+	}
+}
