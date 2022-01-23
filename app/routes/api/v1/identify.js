@@ -5,10 +5,10 @@ router.route('/session')
 .post(async (req, res, next) => {
 	var identification = Joi.object({
 		ID: Joi.string().label(lang('identification.ID')).required(),
-		hostname: Joi.string().label(lang('identification.hostname')).required(),
+		hostname: Joi.string().label(lang('identification.hostname')).min(2).required(),
 		device: Joi.object({
-			id: Joi.string().label(lang('identification.device_id')).required(),
-			type: Joi.string().label(lang('identification.device_type')).required(),
+			id: Joi.string().label(lang('identification.device_id')).min(40).required(),
+			type: Joi.string().label(lang('identification.device_type')).valid('laptop', 'desktop', 'android', 'ios', 'wear').required(),
 			os: Joi.object({
 				name: Joi.string().label('identification.os_name').required(),
 				version: Joi.string().label('identification.os_version').required()
@@ -26,12 +26,6 @@ router.route('/session')
 		})
 	}).validate(req.body, { abortEarly: false });
 
-	var device_registration = await Models.identified_device.findOne({
-		where: {
-			uid: req.body.device.id
-		}
-	});
-
 	if (typeof identification.error == 'undefined') {
 
 		var visitor_session = (req.session.visitor_id !== undefined)?await Models.visitor.findOne({ where: { id: req.session.visitor_id } }):null;
@@ -40,6 +34,12 @@ router.route('/session')
 		}
 
 		identification = identification.value;
+
+		var device_registration = await Models.identified_device.findOne({
+			where: {
+				uid: identification.device.id
+			}
+		});
 
 		if (device_registration == null) {
 			device_registration = await Models.identified_device.create({
