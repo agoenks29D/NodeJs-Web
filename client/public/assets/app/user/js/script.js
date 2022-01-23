@@ -1,10 +1,12 @@
 var WN = WebNode({
-	ID: 'WN-1337'
+	ID: 'WN-1337' // Client ID
 }).then(resource => {
 	window.API = resource.RESTful(localStorage.getItem('token'));
 	$('#sign-in').on('submit', (e) => {
 		e.preventDefault();
 		API.user.sign_in($('#sign-in-identity').val(), $('#sign-in-password').val()).then(user => {
+			$('#sign-in-identity').attr('disabled', true);
+			$('#sign-in-password').attr('disabled', true);
 			$('p.login-box-msg').text('authentication success').css('color', 'green');
 			var Toast = resource.Swal.mixin({
 				toast: true,
