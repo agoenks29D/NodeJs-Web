@@ -72,16 +72,7 @@ export default class ServiceWorker {
 				register.pushManager.subscribe({
 					userVisibleOnly: true,
 					applicationServerKey: String_.base64_to_int8_array(this.#autenticated.public_vapid_key)
-				}).then(subscription => {
-					$.ajax({
-						url: this.#config.SERVER+'/api/v1/notification/web-push/subscribe',
-						type: 'POST',
-						dataType: 'JSON',
-						data: { client: this.#config.ID, user_identify: this.#autenticated.user_identify, subscription: JSON.stringify(subscription) },
-						success: () => resolve(true),
-						error: () => resolve(false)
-					});
-				});
+				}).then(resolve, reject);
 			} else {
 				resolve(false);
 			}

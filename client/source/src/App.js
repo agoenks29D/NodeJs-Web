@@ -37,7 +37,9 @@ export default function (config) {
 
 				Data.ServiceWorker = Service_Worker;
 				Data.RESTful = RESTful;
+				Data.RESTfulUser = Core.RESTful();
 				Data.Swal = Swal;
+				Data.Helpers = Core.helpers();
 
 				resolve(Data);
 			} else {

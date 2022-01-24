@@ -32,7 +32,30 @@ export default class Core {
 		}
 
 		this.#socket = new Manager(this.#config.SERVER, { path: '/ws', transports: ['websocket', 'polling'] });
-		this.#api = RESTful(localStorage.getItem('token'));
+		this.#api = RESTful(this.user_token());
+	}
+
+	/**
+	 * Restful with initialized user token
+	 *
+	 * @class      RESTful
+	 * @return     {object}  RESTful class
+	 */
+	RESTful() {
+		return this.#api;
+	}
+
+	/**
+	 * Helpers
+	 *
+	 * @return     {Object}  Functions helper
+	 */
+	helpers() {
+		return {
+			cookies: Cookies_,
+			string: String_,
+			identification: Identification_
+		}
 	}
 
 	/**
@@ -68,6 +91,15 @@ export default class Core {
 
 			this.#api.user.identify(data).then(response => resolve(response.data), error => reject(error));
 		});
+	}
+
+	/**
+	 * Get user token
+	 *
+	 * @return     {string}  User token
+	 */
+	user_token() {
+		return localStorage.getItem('token');
 	}
 
 	/**
