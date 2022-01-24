@@ -27,7 +27,7 @@ module.exports.user_identify = (req, res, next) => {
 					time: moment().format('HH:mm:ss')
 				}).then(created => {
 					req.session.visitor_id = created.id;
-					visitor = created.id
+					req.session.uid = created.session_uid;
 					res.locals.analytic.visitor = created.id;
 				});
 			} else {
