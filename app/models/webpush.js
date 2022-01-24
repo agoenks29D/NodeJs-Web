@@ -20,7 +20,7 @@ module.exports = function(DataTypes) {
 				allowNull: false
 			},
 			endpoint: {
-				type: DataTypes.TEXT,
+				type: DataTypes.TEXT('tiny'),
 				allowNull: false
 			},
 			user_id: {
