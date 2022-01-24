@@ -12,25 +12,58 @@ router.route('/web-push/:option')
 })
 .post(async (req, res, next) => {
 	if (req.params.option == 'subscribe') {
-		var sha1_endpoint = sha1(req.body.subscription).toString();
-		var webpush_registration = await Models.webpush_notification.findOne({
-			where: {
-				sha1_endpoint: sha1_endpoint
+		var subscription = Joi.object({
+			device_id: Joi.string().label(lang('identification.device_id')),
+			subscription: Joi.object({
+				endpoint: Joi.string().label(lang('webpush.endpoint')).required(),
+				expirationTime: Joi.any(),
+				keys: Joi.any()
+			})
+		}).validate(req.body, { abortEarly: false });
+
+		if (typeof subscription.error == 'undefined') {
+			subscription = subscription.value;
+			var sha1_uid = sha1(subscription.subscription.endpoint).toString();
+			var device_registration = await Models.identified_device.findOne({
+				where: {
+					uid: subscription.device_id
+				}
+			});
+
+			var webpush_registration = await Models.webpush.findOne({
+				where: {
+					sha1_uid: sha1_uid
+				}
+			});
+
+			if (device_registration !== null) {
+				var new_data = {
+					session_uid: req.session.uid,
+					device_id: device_registration.id,
+					endpoint: JSON.stringify(subscription.subscription),
+					sha1_uid: sha1_uid
+				}
+
+				if (req.session.user_id !== undefined) {
+					new_data.user_id = req.session.user_id;
+				}
+
+				if (webpush_registration == null) {
+					webpush_registration = await Models.webpush.create(new_data);
+				}
 			}
-		});
 
-		if (webpush_registration == null) {
-			webpush_registration = await Models.webpush_notification.create({ device_id: req.session.device_registration, sha1_endpoint: sha1_endpoint, endpoint: req.body.subscription });
+			res.json({ status: 'success' });
+		} else {
+			res.json({ status: 'error', data: subscription.error.details });
 		}
-
-		res.json({});
 	} else if (req.params.option == 'broadcast') {
-		var subscription = await Models.webpush_notification.findAll();
+		var subscription = await Models.webpush.findAll();
 		subscription.forEach((val, key) => {
 			webpush.sendNotification(JSON.parse(val.endpoint), JSON.stringify({
-				title: 'xxx',
+				title: 'Title',
 				options: {
-					body: 'xxx'
+					body: 'Notification!'
 				}
 			})).then((sent) => console.log('SENT', sent), (error) => console.log('ERROR', error.statusCode));
 		});

@@ -211,7 +211,8 @@ app.use('/',
 app.use('/api',
 	express.Router().use('/v1/site', require(__dirname+'/app/routes/api/v1/site')),
 	express.Router().use('/v1/user', require(__dirname+'/app/routes/api/v1/user')),
-	express.Router().use('/v1/identify', require(__dirname+'/app/routes/api/v1/identify'))
+	express.Router().use('/v1/identify', require(__dirname+'/app/routes/api/v1/identify')),
+	express.Router().use('/v1/notification', require(__dirname+'/app/routes/api/v1/notification'))
 );
 
 /**
