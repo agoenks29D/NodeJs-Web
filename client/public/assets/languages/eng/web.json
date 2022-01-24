@@ -76,5 +76,8 @@
     "is_browser": "Is Browser",
     "is_private": "Is Private Browser"
   },
-  "page": "page"
+  "page": "page",
+  "webpush": {
+    "endpoint": "WebPush Endpoint"
+  }
 }
