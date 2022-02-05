@@ -83,10 +83,22 @@ global.Engines = require(__dirname+'/app/engines');
 
 async.waterfall([
 	function (callback) {
+		var database;
+
+		const SQL_DB_SUPPORT = /(mysqli?|maria(db)?|postgre(sql)?s?|sqlite3?)/;
+		const NoSQL_DB_SUPPORT = /(mongo(db)?|rethink(db)?)/;
 		if (process.env.DB_ENABLE) {
-			var database = require(__dirname+'/app/libraries/database');
-			database = new database;
-			database.init().then(initialize_database => callback(null, initialize_database), error => callback(error)); // Initialize database config
+			const DB_DEFAULT = Constants.DB_CONFIG[process.env.DB_ACTIVE];
+
+			if (DB_DEFAULT.dbdriver.match(SQL_DB_SUPPORT)) {
+				database = require(__dirname+'/app/libraries/sql_db');
+				database = new database(process.env.DB_ACTIVE);
+				database.init().then(initialize_database => callback(null, initialize_database), error => callback(error)); // Initialize database config
+			} else if (DB_DEFAULT.dbdriver.match(SQL_DB_SUPPORT)) {
+				database = require(__dirname+'/app/libraries/no_sql_db');
+				database = new database(process.env.DB_ACTIVE);
+				database.init().then(initialize_database => callback(null, initialize_database), error => callback(error)); // Initialize database config
+			}
 		} else {
 			callback(null);
 		}
