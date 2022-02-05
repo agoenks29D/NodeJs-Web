@@ -1,6 +1,9 @@
 {
   "text": {
-    "primary-header": "Dashboard"
+    "primary-header": "Dashboard",
+    "page-title": {
+      "user": "User"
+    }
   },
   "home": "home",
   "site": {
