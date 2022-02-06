@@ -184,6 +184,19 @@ const twig_render = (req, res, file, options = {}) => {
 	Object.assign(options, res.locals); // merge option variable to local variable
 	const twig = new Engines.twig([ { name: 'site', path: Constants.VIEW_PATH+'/site/' }, { name: 'user', path: Constants.VIEW_PATH+'/user/' } ]); // assign template paths
 
+	// register twig filter
+	twig.addFilter('map_merge', (array_object, new_item) => {
+		if (new_item.has(0)) {
+			new_item.forEach((value, key, map) => {
+				array_object.set(array_object.size, value);
+			});
+		} else {
+			array_object.set(array_object.size, new_item);
+		}
+
+		return Promise.resolve(array_object);
+	});
+
 	// register twig functions
 	twig.addFunction('lang', (key) => {
 		return Promise.resolve(lang(key));
