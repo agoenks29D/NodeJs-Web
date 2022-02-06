@@ -66,5 +66,17 @@
     "is_browser": "identification.is_browser",
     "is_private": "identification.is_private"
   },
-  "home": "home"
+  "home": "home",
+  "text": {
+    "page-title": {
+      "home": "text.page-title.home"
+    },
+    "primary-header": "text.primary-header"
+  },
+  "text-link": {
+    "home": "text-link.home",
+    "contact": "text-link.contact",
+    "see-all-notification": "text-link.see-all-notification",
+    "see-all-message": "text-link.see-all-message"
+  }
 }
