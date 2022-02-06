@@ -272,14 +272,14 @@ app.use((error, req, res, next) => {
 			res.render('@user/error.twig', {
 				error: error,
 				page_attributes: {
-					name: lang('error')
+					name: lang('page-title.error')
 				}
 			});
 		} else {
 			res.render('@site/error.twig', {
 				error: error,
 				page_attributes: {
-					name: lang('error')
+					name: lang('page-title.error')
 				}
 			});
 		}

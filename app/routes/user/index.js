@@ -36,6 +36,13 @@ router
 })
 
 /**
+ * reset account password
+ */
+.get('/reset-password', Middlewares.user.session_redirect, Middlewares.user.profile, (req, res) => {
+	res.render('@user/authentication/reset-password.twig');
+})
+
+/**
  * profile
  */
 .get('/profile/:uid?/:option?', Middlewares.user.session_redirect, Middlewares.user.profile, (req, res) => {

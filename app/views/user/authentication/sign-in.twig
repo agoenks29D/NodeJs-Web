@@ -1,6 +1,6 @@
 {% extends '@user/authentication/base.twig' %}
 
-{% block title %}{{ app.name }} - {{ lang('sign-in') }}{% endblock %}
+{% block title %}{{ app.name }} - {{ lang('page-title.sign-in') }}{% endblock %}
 
 {% block body %}
 <body class="hold-transition login-page">
@@ -10,10 +10,10 @@
 				<a href="/" class="h1"><b>{{ app.name }}</b></a>
 			</div>
 			<div class="card-body">
-				<p class="login-box-msg">{{ lang('text-message.header.sign-in') }}</p>
+				<p class="login-box-msg">{{ lang('authentication.header-message.sign-in') }}</p>
 				<form method="post" id="sign-in">
 					<div class="input-group mb-3">
-						<input type="text" class="form-control" placeholder="{{ lang('placeholder.email-or-username') }}" name="identity" id="sign-in-identity">
+						<input type="text" class="form-control" placeholder="{{ lang('authentication.form-placeholder.email-or-username') }}" name="identity" id="sign-in-identity">
 						<div class="input-group-append">
 							<div class="input-group-text">
 								<span class="fas fa-envelope"></span>
@@ -21,7 +21,7 @@
 						</div>
 					</div>
 					<div class="input-group mb-3">
-						<input type="password" class="form-control" placeholder="{{ lang('placeholder.password') }}" name="password" id="sign-in-password">
+						<input type="password" class="form-control" placeholder="{{ lang('authentication.form-placeholder.password') }}" name="password" id="sign-in-password">
 						<div class="input-group-append">
 							<div class="input-group-text">
 								<span class="fas fa-lock"></span>
@@ -32,29 +32,29 @@
 						<div class="col-8">
 							<div class="icheck-primary">
 								<input type="checkbox" id="sign-in-remember">
-								<label for="remember">{{ lang('form-label.remember-me') }}</label>
+								<label for="remember">{{ lang('authentication.form-label.remember-me') }}</label>
 							</div>
 						</div>
 						<div class="col-4">
-							<button type="submit" class="btn btn-primary btn-block">{{ lang('button.text.sign-in.default') }}</button>
+							<button type="submit" class="btn btn-primary btn-block">{{ lang('authentication.button.sign-in.default') }}</button>
 						</div>
 					</div>
 				</form>
 				<div class="social-auth-links text-center mt-2 mb-3">
 					<a href="#" class="btn btn-block btn-primary">
 						<i class="fab fa-facebook mr-2"></i>
-						{{ lang('button.text.sign-in.with-facebook') }}
+						{{ lang('authentication.button.sign-in.with-facebook') }}
 					</a>
 					<a href="#" class="btn btn-block btn-danger">
 						<i class="fab fa-google-plus mr-2"></i>
-						{{ lang('button.text.sign-in.with-google-plus') }}
+						{{ lang('authentication.button.sign-in.with-google-plus') }}
 					</a>
 				</div>
 				<p class="mb-1">
-					<a href="recover-account">{{ lang('text-link.forgot-password') }}</a>
+					<a href="recover-account">{{ lang('authentication.text-link.forgot-password') }}</a>
 				</p>
 				<p class="mb-0">
-					<a href="sign-up" class="text-center">{{ lang('text-link.sign-up') }}</a>
+					<a href="sign-up" class="text-center">{{ lang('authentication.text-link.sign-up') }}</a>
 				</p>
 			</div>
 		</div>

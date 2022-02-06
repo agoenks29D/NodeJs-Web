@@ -8,7 +8,7 @@
  */
 module.exports.session_redirect = (req, res, next) => {
 	if (req.originalUrl.match(/^\/user(\/)?.*/)) {
-		var auth_pages = /\/(sign-in|sign-up|forgot-password|recover-account|confirm-code)\/?/;
+		var auth_pages = /\/(sign-in|sign-up|forgot-password|recover-account|reset-password|confirm-code)\/?/;
 		if (typeof req.session.user_id == 'undefined') {
 			if (req.originalUrl.match(auth_pages) == null && req.originalUrl.match(/(.*)\/api\/v\d{1,2}\/(.*)/) == null) {
 				req.flash('redirected', true);

@@ -1,88 +1,70 @@
 {
-  "text": {
-    "primary-header": "Dashboard",
-    "page-title": {
-      "user": "User",
-      "home": "Home"
+  "page-title": {
+    "sign-up": "Sign Up",
+    "sign-in": "Sign In",
+    "recovery-account": "Recovery Account",
+    "reset-password": "Reset Password",
+    "error": "Error"
+  },
+  "authentication": {
+    "header-message": {
+      "sign-up": "Create new account to sign in",
+      "sign-in": "Sign in to start your session",
+      "recover-account": "Recover Your Account",
+      "reset-password": "Reset Password"
+    },
+    "form-placeholder": {
+      "full-name": "Full Name",
+      "email": "Email",
+      "password": "Password",
+      "repeat-password": "Repeat Password",
+      "email-or-username": "Email or Username",
+      "new-password": "Create New Password",
+      "repeat-new-password": "Repeat New Password"
+    },
+    "form-label": {
+      "agree-terms": "I agree",
+      "remember-me": "Remember Me"
+    },
+    "text-link": {
+      "terms": "Terms",
+      "already-have-account": "Already have account",
+      "forgot-password": "Forgot password",
+      "sign-up": "Sign up",
+      "sign-in": "Sign in"
+    },
+    "button": {
+      "sign-up": {
+        "default": "Sign Up",
+        "with-facebook": "Sign up with Facebook",
+        "with-google-plus": "Sign up with Google"
+      },
+      "sign-in": {
+        "default": "Sign In",
+        "with-facebook": "Sign in with Facebook",
+        "with-google-plus": "Sign in with Google"
+      },
+      "recover-account": {
+        "request-new-password": "Request New Password",
+        "reset-password": "Reset Password"
+      }
     }
   },
-  "home": "home",
   "site": {
     "navbar-link": {
       "home": "Home",
       "about": "About",
       "contact": "Contact",
-      "sign-in": "Sign In"
+      "sign-in": "Sign in"
     }
-  },
-  "text-message": {
-    "header": {
-      "sign-in": "Sign in to start your session",
-      "recover-account": "Account recovery, find your account",
-      "sign-up": "Create new account"
-    }
-  },
-  "placeholder": {
-    "email-or-username": "Email / Username",
-    "password": "Password",
-    "email": "Email",
-    "full-name": "Full name",
-    "repeat-password": "Repeat password"
-  },
-  "form-label": {
-    "remember-me": "Remember Me",
-    "agree-terms": "I agree"
-  },
-  "button": {
-    "text": {
-      "sign-in": {
-        "default": "Sign in",
-        "with-facebook": "Sign in with facebook",
-        "with-google-plus": "Sign in with google"
-      },
-      "recover-account": {
-        "request-new-password": "Request new password"
-      },
-      "sign-up": {
-        "default": "Sign up",
-        "with-facebook": "Sign up with facebook",
-        "with-google-plus": "Sign up with google"
-      }
-    }
-  },
-  "text-link": {
-    "forgot-password": "Forgot password",
-    "sign-up": "Sign up",
-    "home": "Home",
-    "contact": "Contact",
-    "see-all-notification": "See all notification",
-    "see-all-message": "See all message",
-    "profile": "Profile",
-    "settings": "Settings",
-    "sign-out": "Sign Out",
-    "sign-in": "Sign In",
-    "terms": "terms",
-    "already-have-account": "Already have account"
-  },
-  "validation": {
-    "device_id": "Device ID",
-    "device_type": "Device Type",
-    "is_browser": "Is Browser",
-    "is_private": "Is Private Browser"
   },
   "identification": {
-    "ID": "ID",
-    "hostname": "Hostname",
-    "device_id": "Device ID",
-    "device_type": "Device Type",
-    "is_browser": "Is Browser",
-    "is_private": "Is Private Browser"
+    "ID": "identification.ID",
+    "hostname": "identification.hostname",
+    "device_id": "identification.device_id",
+    "device_type": "identification.device_type",
+    "is_browser": "identification.is_browser",
+    "is_private": "identification.is_private"
   },
-  "page": "page",
-  "webpush": {
-    "endpoint": "WebPush Endpoint"
-  },
-  "user": {
-    "profile": "User Profile"
-  }
+  "home": "home"
 }
