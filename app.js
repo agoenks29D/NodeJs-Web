@@ -187,9 +187,7 @@ const twig_render = (req, res, file, options = {}) => {
 	// register twig filter
 	twig.addFilter('map_merge', (array_object, new_item) => {
 		if (new_item.has(0)) {
-			new_item.forEach((value, key, map) => {
-				array_object.set(array_object.size, value);
-			});
+			new_item.forEach((value, key, map) => array_object.set(array_object.size, value) );
 		} else {
 			array_object.set(array_object.size, new_item);
 		}
