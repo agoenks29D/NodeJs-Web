@@ -2,7 +2,8 @@
   "text": {
     "primary-header": "Dashboard",
     "page-title": {
-      "user": "User"
+      "user": "User",
+      "home": "Home"
     }
   },
   "home": "home",
@@ -14,8 +15,6 @@
       "sign-in": "Sign In"
     }
   },
-  "error": "error",
-  "sign-in": "Sign In",
   "text-message": {
     "header": {
       "sign-in": "Sign in to start your session",
@@ -82,5 +81,8 @@
   "page": "page",
   "webpush": {
     "endpoint": "WebPush Endpoint"
+  },
+  "user": {
+    "profile": "User Profile"
   }
 }

@@ -1,12 +1,6 @@
 {% extends '@user/authentication/base.twig' %}
 
-{% block title %}
-	{% if title is defined %}
-			{{ title }}
-		{% else %}
-			{{ app.name }} - {{ page_attributes.name }}
-	{% endif %}
-{% endblock %}
+{% block title %}{{ app.name }} - {{ lang('sign-in') }}{% endblock %}
 
 {% block body %}
 <body class="hold-transition login-page">
