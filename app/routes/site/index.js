@@ -9,7 +9,7 @@ router
 .get('/', function(req, res) {
 	res.render('@site/home.twig', {
 		page_attributes: {
-			name: lang('home')
+			name: lang('page-title.home')
 		},
 		name: 'Developer'
 	});
@@ -18,7 +18,7 @@ router
 .get('/page/:slug', (req, res) => {
 	res.render('@site/page.twig', {
 		page_attributes: {
-			name: lang('page')
+			name: lang('page-title.page')
 		}
 	});
 })
@@ -26,7 +26,7 @@ router
 .get('/post/:slug', (req, res) => {
 	res.render('@site/post.twig', {
 		page_attributes: {
-			name: lang('page')
+			name: lang('page-title.post')
 		}
 	});
 });

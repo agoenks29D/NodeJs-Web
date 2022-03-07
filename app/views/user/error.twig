@@ -1,6 +1,8 @@
 {% extends '@user/base.twig' %}
 
-{% set primary_header = error.status ~' '~ error.message %}
+{% block title %}{{ error.status ~' '~ error.message }} - {{ app.name }}{% endblock %}
+
+{% block primary_header %}{{ error.status ~' '~ error.message }}{% endblock %}
 
 {% block content %}
 <div class="container-fluid">

@@ -1,16 +1,14 @@
 {% extends '@user/base.twig' %}
 
-{% block title %}
-	{{ app.name ~ ' ' ~ user.full_name ~ ' ' ~ lang('user.page-title.profile') }}
-{% endblock %}
+{% block title %}{{ app.name ~ ' - ' ~ lang('page-title.user-profile') }}{% endblock %}
 
-{% set primary_header = lang('user.page-title.profile') %}
+{% set primary_header = lang('page-title.user-profile') %}
 
 {%
 	set breadcrumbs = [
 		{
 			link: '/user/profile',
-			name: lang('user.page-title.profile')
+			name: lang('page-title.user-profile')
 		}
 	]
 %}
