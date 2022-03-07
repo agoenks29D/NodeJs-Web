@@ -6,7 +6,6 @@
  * @return     {string}  HTML encoded
  */
 module.exports.encode = function(str) {
-    console.log(str)
 	return str.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
 		return '&#' + i.charCodeAt(0) + ';';
 	});
@@ -21,5 +20,5 @@ module.exports.encode = function(str) {
 module.exports.decode = function(str) {
 	return (str+"").replace(/&#\d+;/gm,function(s) {
 		return String.fromCharCode(s.match(/\d+/gm)[0]);
-	})
+	});
 }
